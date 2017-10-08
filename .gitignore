@@ -1,0 +1,6 @@
+## Ignore Files
+
+#Ignore SCSS
+/scss
+gulpfile.js
+package-lock.json
