@@ -1,4 +1,24 @@
-<h1>Design Quotes</h1>
 
-<div class="box">
+<head>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js'></script>
+<link href="https://fonts.googleapis.com/css?family=Oswald|Pacifico" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h1 id="name">Design Quotes</h1>
+<div class="shadow">
+  <div class="box">
+    <div id="content"></div>
+  </div>
 </div>
+</body>
+<script>
+$.ajaxSetup({ cache: false });
+$.getJSON("http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&_callback=", function(a) {
+   $("#content").append(a[0].content + "<p>&mdash; " + a[0].title + "</p>");
+
+});
+
+
+</script>
