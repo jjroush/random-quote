@@ -11,19 +11,25 @@
 
 .shadow {
   background-color: rgba(255, 255, 255, 0.28);
-  position: absolute;
+  position: relative;
   margin: auto;
-  top: 0;
+  top: 5vmin;
   right: 0;
   bottom: 0;
   left: 0;
   width: 60%;
-  height: 300px; }
+  height: 400px;
+  padding-left: 15px;
+  padding-right: 15px; }
 
-.box {
-  width: 60%;
-  height: 60%;
-  margin: auto; }
+#twitter {
+  postion: absolute;
+  right: 0;
+  bottom: 0; }
+
+#t-img {
+  width: 40px;
+  opacity: .3; }
 
 body {
   background-image: url("../photos/inspiration-back.jpg");
