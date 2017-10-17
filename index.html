@@ -22,21 +22,19 @@
 var currentQuote = '';
 function getQuote() {
 $.ajaxSetup({ cache: false });
-$.getJSON("http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&_callback=", function(a) {
+$.getJSON("https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&_callback=", function(a) {
    $("#content").html(a[0].content + "<p>&mdash; " + a[0].title + "</p>");
    var currentQuote = a[0].content;
    var currentAuth = a[0].title;
    var currentQuote = $(currentQuote).text();
    var currentQuote = currentQuote + " -" + currentAuth;
-   
+
    $('#tweet-link').attr('href','https://twitter.com/intent/tweet?related=jacob_roush&text=' + encodeURIComponent(currentQuote)  );
 });
 }
 getQuote();
 $('#name').on('click', getQuote);
 $(window).bind("load", function() {
-console.log($().text());
 });
 
-$('#tweet-link').attr('href','https://twitter.com/intent/tweet?text='  );
 </script>
